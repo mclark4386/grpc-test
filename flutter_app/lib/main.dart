@@ -74,6 +74,10 @@ class _MyHomePageState extends State<MyHomePage> {
     channel = new ClientChannel('127.0.0.1', port: 8080, options: const ChannelOptions.insecure());
     client = new BlockchainClient(channel, options: new CallOptions(timeout: new Duration(seconds: 30)));
   }
+
+  void initState() {
+    _getBlockchain();
+  }
   
   void _incrementCounter() {
     setState(() {
